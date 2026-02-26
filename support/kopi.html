@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kopi Support - Android File Manager</title>
+    <meta name="description" content="Support and troubleshooting for Kopi, your Android file manager desktop app. Find answers to common connection issues.">
+    <style>
+        :root {
+            /* Professional Grayscale Palette */
+            --primary-text-color: #2C3E50; /* Darker, professional text */
+            --secondary-text-color: #555555; /* Medium grey for body text */
+            --light-text-color: #7F8C8D; /* Lighter grey for subtle hints */
+            --background-color: #F8F9FA; /* Very light grey background */
+            --card-background: #FFFFFF; /* Pure white for content cards */
+            --border-color: #E0E0E0; /* Light grey for subtle borders */
+            --shadow-color: rgba(0, 0, 0, 0.08); /* Soft shadow */
+            --accent-color: #3498DB; /* A professional, subtle blue for links/highlights */
+            --accent-hover-color: #2980B9;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            line-height: 1.6;
+            color: var(--secondary-text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: var(--card-background);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px var(--shadow-color);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-text-color);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.8em;
+            color: var(--primary-text-color); /* Even title uses professional dark grey */
+            font-weight: 600; /* Slightly bolder for impact */
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color); /* Thinner, softer border */
+            padding-bottom: 15px; /* More space below heading and border */
+            font-weight: 500;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            margin-top: 25px;
+            color: var(--primary-text-color);
+            font-weight: 500;
+        }
+
+        .intro-text {
+            text-align: left;
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            color: var(--secondary-text-color);
+        }
+
+        .faq-section {
+            margin-bottom: 30px;
+        }
+
+        .faq-item {
+            background-color: var(--card-background);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            padding: 20px;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 2px 10px var(--shadow-color);
+        }
+
+        .faq-item h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--primary-text-color);
+            padding-right: 10px; /* Space for the icon */
+        }
+
+        /* Plus/Minus icon styling */
+        .faq-item h3::after {
+            content: '+'; /* Plus sign for closed state */
+            font-size: 1.2em; /* Slightly larger for clarity */
+            font-weight: bold;
+            color: var(--light-text-color); /* Subtle grey for icon */
+            transition: transform 0.2s, color 0.2s;
+            margin-left: 10px;
+        }
+
+        .faq-item.open h3::after {
+            content: '−'; /* Minus sign for open state */
+            color: var(--accent-color); /* Blue when open */
+            transform: rotate(0deg); /* No rotation needed for +/- */
+        }
+
+        .faq-answer {
+            display: none;
+            padding-top: 15px;
+            border-top: 1px solid #F0F0F0; /* Lighter border for answer separator */
+            margin-top: 15px;
+            color: var(--secondary-text-color);
+        }
+
+        .faq-answer p, .faq-answer ul, .faq-answer ol {
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .faq-answer ul, .faq-answer ol {
+            list-style-position: inside;
+            margin-left: 0;
+            padding-left: 20px;
+        }
+
+        .faq-answer li {
+            margin-bottom: 8px;
+        }
+
+        .faq-answer strong {
+            color: var(--primary-text-color); /* Bold text in answers */
+        }
+
+        .contact-section {
+            text-align: left;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .contact-section p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: var(--secondary-text-color);
+        }
+
+        .contact-section a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s ease;
+        }
+
+        .contact-section a:hover {
+            color: var(--accent-hover-color);
+            text-decoration: underline;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px auto;
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2.2em;
+            }
+            h2 {
+                font-size: 1.7em;
+            }
+            h3 {
+                font-size: 1.2em;
+            }
+            .intro-text {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kopi Support</h1>
+        <p class="intro-text">Having trouble connecting your Android device? We're here to help! Below are solutions to the most common connection issues.</p>
+
+        <div class="faq-section">
+            <h2>Frequently Asked Questions (FAQs)</h2>
+
+            <div class="faq-item">
+                <h3>Q1: My device isn't showing up or connecting to Kopi. What should I do?</h3>
+                <div class="faq-answer">
+                    <p>This is often due to the phone's connection settings.</p>
+                    <ul>
+                        <li><strong>Check your phone's USB connection mode:</strong>
+                            <ol>
+                                <li>After connecting your phone to your computer via USB, swipe down from the top of your phone's screen to open the notification shade.</li>
+                                <li>Look for a notification related to "USB charging," "USB for," or "USB options." Tap on it.</li>
+                                <li>Select <strong>"File Transfer / MTP"</strong> (Media Transfer Protocol). Avoid "Charging only," "PTP," or "MIDI."</li>
+                            </ol>
+                        </li>
+                        <li><strong>Reconnect the USB cable:</strong> Unplug and re-plug the USB cable from both your phone and your computer. Try different USB ports if available.</li>
+                        <li><strong>Restart Kopi:</strong> Sometimes a fresh start for the app can resolve connection glitches.</li>
+                        <li><strong>Restart your computer:</strong> As a last resort, restarting your computer can resolve underlying driver issues.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <h3>Q2: I have a Samsung phone and Kopi isn't connecting, even after selecting File Transfer mode.</h3>
+                <div class="faq-answer">
+                    <p>Samsung phones sometimes require an extra step during the initial connection.</p>
+                    <ul>
+                        <li><strong>Look for the "Allow access to phone data" prompt:</strong> The very first time you connect your Samsung phone to a new computer, your phone should display a pop-up asking "Allow access to phone data?" You <strong>must tap "Allow"</strong> on your phone for MTP to work.</li>
+                        <li><strong>If you missed it:</strong> Unplug your phone, restart Kopi, and then reconnect your phone. Watch closely for the "Allow" prompt and tap it.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <h3>Q3: Kopi freezes or becomes unresponsive when I try to connect to my device.</h3>
+                <div class="faq-answer">
+                    <p>This can happen occasionally due to timing or minor communication hiccups.</p>
+                    <ul>
+                        <li><strong>Restart Kopi:</strong> Close the app completely and open it again.</li>
+                        <li><strong>Reconnect your device:</strong> Disconnect your phone from the USB cable, wait a few seconds, and then plug it back in.</li>
+                        <li><strong>Try connecting in a different order:</strong> Sometimes, connecting the phone first and then opening the app, or vice-versa, can make a difference.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <h3>Q4: My phone is connected and charging, but I can't see my files in Kopi.</h3>
+                <div class="faq-answer">
+                    <p>This is the most common MTP issue! Your phone is likely in "Charging only" mode.</p>
+                    <ul>
+                        <li><strong>Change your USB connection mode to "File Transfer":</strong>
+                            <ol>
+                                <li>Swipe down from the top of your phone's screen to access notifications.</li>
+                                <li>Find the USB notification (it often says "Charging this device via USB").</li>
+                                <li>Tap this notification and select <strong>"File Transfer / MTP"</strong> from the options.</li>
+                            </ol>
+                        </li>
+                        <li>Once "File Transfer" is selected, Kopi should refresh and display your device's storage.</li>
+                    </ul>
+                </div>
+            </div>
+        </div> <!-- /faq-section -->
+
+        <div class="contact-section">
+            <p><strong>Still having trouble?</strong> If these solutions don't resolve your issue, please don't hesitate to reach out! We're here to help.</p>
+            <p><a href="mailto:kitenium@gmail.com">kitenium@gmail.com</a></p>
+        </div>
+    </div> <!-- /container -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const header = item.querySelector('h3');
+                header.addEventListener('click', () => {
+                    item.classList.toggle('open');
+                    const answer = item.querySelector('.faq-answer');
+                    if (item.classList.contains('open')) {
+                        answer.style.display = 'block';
+                        // Optional: Smooth animation for height (more complex with max-height, often needs JS to calculate)
+                        // For simplicity, we'll just show/hide instantly.
+                    } else {
+                        answer.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
